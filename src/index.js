@@ -4,7 +4,7 @@ import YTSearch from 'youtube-api-search';
 
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
-const API_KEY = 'AIzaSyAuQCVeNfKhtRk9KlChQPT1nO27DPO_5Ss'; 
+import { API_KEY } from './consts';
 
 
 //refractoring complonent to class
@@ -14,7 +14,7 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { video: [] };
+        this.state = { videos: [] };
 
         YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
             this.setState({ videos });
